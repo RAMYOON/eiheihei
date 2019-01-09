@@ -1,8 +1,5 @@
 package com.yoon.eiheihei.utils;
 
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
-
 import java.security.SecureRandom;
 import java.util.UUID;
 
