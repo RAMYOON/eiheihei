@@ -8,9 +8,17 @@ import java.util.List;
 
 public interface EiVideoService {
 
+    /**
+     * 获取文件列表（没有分页）
+     * @return 文件列表
+     */
     @Transactional(readOnly = true)
     List<EiVideo> getVideoList();
 
+    /**
+     * 上传文件
+     * @param file 文件
+     */
     @Transactional
     void uploadVideo(MultipartFile file);
 

@@ -14,21 +14,22 @@ public class FileUploadUtils {
     /**
      * 上传文件
      *
-     * @param file
+     * @param file 待上传的文件
      */
-    public static void uploadFile(MultipartFile file,String id) {
-
+    public static boolean uploadFile(MultipartFile file, String fileName) {
+        boolean result = false;
         String path = Global.getProperties("video_upload_path");
-        String fileName = id;
         File filePath = new File(path, fileName);
         if (!filePath.getParentFile().exists()) {
-            filePath.getParentFile().mkdirs();
+            result = filePath.getParentFile().mkdirs();
         }
         try {
             file.transferTo(new File(path + File.separator + fileName));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return result;
     }
 
     public static String getSuffix(String fullFileName) {
@@ -36,6 +37,6 @@ public class FileUploadUtils {
     }
 
     public static String getFileName(String fullFileName) {
-        return fullFileName.substring(0,fullFileName.lastIndexOf("."));
+        return fullFileName.substring(0, fullFileName.lastIndexOf("."));
     }
 }

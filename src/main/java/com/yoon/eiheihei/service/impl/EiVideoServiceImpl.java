@@ -20,23 +20,38 @@ public class EiVideoServiceImpl implements EiVideoService {
     private EiVideoMapper eiVideoMapper;
 
     @Override
-    public List<EiVideo> getVideoList(){
+    public List<EiVideo> getVideoList() {
         EiVideoExample eiVideoExample = new EiVideoExample();
         return eiVideoMapper.selectByExample(eiVideoExample);
     }
 
     @Override
     public void uploadVideo(MultipartFile file) {
+        try {
+            checkParam(file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String fileName = file.getOriginalFilename();
         String id = IDUtils.uuid();
-        if(!file.isEmpty()) {
-            FileUploadUtils.uploadFile(file,id);
+        String suffix = FileUploadUtils.getSuffix(fileName);
+        String videoUrl = Global.getProperties("server_url") + id + "." + suffix;
+        String videoName = FileUploadUtils.getFileName(fileName);
+
+        if (!file.isEmpty()) {
+            FileUploadUtils.uploadFile(file, id + "." + suffix);
         }
         EiVideo eiVideo = new EiVideo();
         eiVideo.setId(id);
-        eiVideo.setVideoUrl(Global.getProperties("server_url"));
-        eiVideo.setSuffixs(FileUploadUtils.getSuffix(file.getOriginalFilename()));
-        eiVideo.setVideoName(FileUploadUtils.getFileName(file.getOriginalFilename()));
-
+        eiVideo.setVideoUrl(videoUrl);
+        eiVideo.setSuffixs(suffix);
+        eiVideo.setVideoName(videoName);
         eiVideoMapper.insert(eiVideo);
+    }
+
+    private void checkParam(MultipartFile file) throws Exception {
+        if (file == null) {
+            throw new Exception("00000001");
+        }
     }
 }
