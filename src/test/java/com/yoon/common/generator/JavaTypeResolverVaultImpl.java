@@ -1,4 +1,4 @@
-package com.vault.common.generator;
+package com.yoon.common.generator;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;

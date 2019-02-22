@@ -118,7 +118,6 @@
         </dependency>
 
 
-
         <!-- pagehelper -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
@@ -176,8 +175,17 @@
             <artifactId>commons-configuration</artifactId>
             <version>1.10</version>
         </dependency>
-
-
+        <!-- shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
 
 
     </dependencies>
