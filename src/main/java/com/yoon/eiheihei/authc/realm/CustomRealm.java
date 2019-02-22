@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomRealm extends AuthorizingRealm {
+    // https://www.e-learn.cn/content/java/455178
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String userName = (String) principals.getPrimaryPrincipal();
