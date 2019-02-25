@@ -8,20 +8,17 @@
          version="3.0">
     <display-name>Archetype Created Web Application</display-name>
 
-    <!-- 启动时加载spring-mybatis配置文件 -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/spring-mybatis.xml</param-value>
-    </context-param>
-    <context-param>
-        <param-name/>
-        <param-value/>
-    </context-param>
-
     <!-- Spring监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <!-- 启动时加载spring配置文件，多个文件逗号隔开 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:spring/spring-mybatis.xml
+        </param-value>
+    </context-param>
 
     <!-- 处理Spring MVC请求的DispatcherServlet -->
     <servlet>
