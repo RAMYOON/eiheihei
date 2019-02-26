@@ -34,5 +34,6 @@ public class ShiroTest {
 
         subject.logout();
 
+
     }
 }
