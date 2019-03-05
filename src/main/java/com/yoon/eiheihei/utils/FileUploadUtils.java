@@ -8,6 +8,8 @@ import java.io.IOException;
 
 /**
  * 上传文件工具类
+ *
+ * @author yinkai
  */
 public class FileUploadUtils {
 

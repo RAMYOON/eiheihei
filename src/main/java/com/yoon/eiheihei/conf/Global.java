@@ -4,6 +4,11 @@ import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
+/**
+ * 获取全局配置内容的统一类
+ *
+ * @author yinkai
+ */
 public class Global {
 
     private static Configuration configuration = null;
@@ -25,11 +30,12 @@ public class Global {
 
     /**
      * 获取全局配置文件中参数key对应的值
+     *
      * @param key 全局配置文件的键
      * @return 返回一个字符串，该字符串是参数key对应的值，如getProperties(server_url)的返回值为: "http://127.0.0.1/"
      */
     public static String getProperties(String key) {
-        if(configuration == null) {
+        if (configuration == null) {
             loadProperties();
         }
         String result = configuration.getString(key);

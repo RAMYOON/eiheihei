@@ -13,6 +13,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+/**
+ * 视频业务Controller
+ *
+ * @author yinkai
+ */
 @Controller
 @RequestMapping("/video")
 public class EiVideoController {
@@ -22,6 +27,7 @@ public class EiVideoController {
 
     /**
      * 获取列表
+     *
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)

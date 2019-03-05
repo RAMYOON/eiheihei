@@ -13,6 +13,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+/**
+ * 视频业务逻辑层实现
+ *
+ * @author yinkai
+ */
 @Service
 public class EiVideoServiceImpl implements EiVideoService {
 

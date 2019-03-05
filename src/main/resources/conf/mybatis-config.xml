@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
-		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<settings>
-		<!-- 打开延迟加载的开关 -->
-		<setting name="lazyLoadingEnabled" value="true" />
-		<!-- 将积极加载改为消息加载即按需加载 -->
-		<setting name="aggressiveLazyLoading" value="false" />
-		<setting name="lazyLoadTriggerMethods" value=""/>
-	</settings>
-	<plugins>
-		<!-- mybatis分页插件 -->
-		<plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
-	</plugins>
+    <settings>
+        <!-- 打开延迟加载的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为消息加载即按需加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <setting name="lazyLoadTriggerMethods" value=""/>
+    </settings>
+    <plugins>
+        <!-- mybatis分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 </configuration>

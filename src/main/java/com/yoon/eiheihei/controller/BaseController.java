@@ -4,6 +4,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * 通用Controller，具体使用方法待调研
+ *
+ * @author yinkai
+ */
 public interface BaseController {
 
     @RequestMapping(method = RequestMethod.GET)
